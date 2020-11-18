@@ -1,0 +1,82 @@
+%Constar Package Font for XeLatex
+%----------------------------------------------------------------------------------
+%| A | 20160218 | Ding Junying | Created on the Ver.M of pdfLatex example document |
+%----------------------------------------------------------------------------------
+%| B | 20161002 | Ding Junying | Correct the package name in \ProvidePackage       |
+%----------------------------------------------------------------------------------
+%| C | 20170304 | Ding Junying | Add the fontsize setting \ProvidePackage       |
+%----------------------------------------------------------------------------------
+
+\ProvidesPackage{constar_package_font} 		%与文件名保持一致(无后缀), 否则编译报警 
+\usepackage{xeCJK}				% XeLatex中文字体需要
+\usepackage{fontspec,xunicode,xltxtra}		% XeLatex设置字体需要
+\defaultfontfeatures{Mapping=tex-text} 		%如果没有它，会有一些 tex 特殊字符无法正常使用，比如连字符。
+\XeTeXlinebreaklocale "zh" 			% 中文断行
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt  %
+
+%%%%%%%这个名称需要与计算机中Font文件夹的字体名称对应,见./mis 目录中的font.txt%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\fontnameyahei{Microsoft YaHei} 	%微软雅黑
+\newcommand\fontnamehei{SimHei}  		%黑体
+\newcommand\fontnamesong{SimSun}  		%宋体
+\newcommand\fontnamekai{KaiTi}   		%楷体
+\newcommand\fontnamefangsong{FangSong}  	%仿宋
+\newcommand\fontnamehwxingkai{STXingkai}  	%华文行楷
+\newcommand\fontnamehwlishu{STLiti}  		%华文隶书
+
+%设置英文全局字体
+\setmainfont{Times New Roman}   		%英文衬线字体
+\setsansfont{Arial}             		%英文无衬线字体
+\setmonofont{Courier New}       		%英文等宽字
+
+%设置中文全局字体
+\setCJKmainfont[BoldFont=\fontnamehei]{\fontnamesong}	%中文衬线字体, 宋体
+\setCJKsansfont[BoldFont=\fontnamehei]{\fontnamekai}	%中文无衬线字体, 楷体
+\setCJKmonofont{\fontnamehei}				%中文等宽字体, 黑体
+
+%定义中文字体，可以在正文中使用
+%楷体
+\setCJKfamilyfont{fontkai}{\fontnamekai}
+\newcommand{\fontkai}[1]{\CJKfamily{fontkai}#1}
+
+%黑体
+\setCJKfamilyfont{fonthei}{\fontnamehei}
+\newcommand{\fonthei}[1]{\CJKfamily{fonthei}#1}
+
+%仿宋
+\setCJKfamilyfont{fontfangsong}{\fontnamefangsong}
+\newcommand{\fontfangsong}[1]{\CJKfamily{fontfangsong}#1}
+
+%微软雅黑
+\setCJKfamilyfont{fontyahei}{\fontnameyahei}
+\newcommand{\fontyahei}[1]{\CJKfamily{fontyahei}#1}
+
+%宋体
+\setCJKfamilyfont{fontsong}{\fontnamesong}
+\newcommand{\fontsong}[1]{\CJKfamily{fontsong}#1}
+
+%华文行楷
+\setCJKfamilyfont{fonthwxingkai}{\fontnamehwxingkai}
+\newcommand{\fonthwxingkai}[1]{\CJKfamily{fonthwxingkai}#1}
+
+%华文隶书
+\setCJKfamilyfont{fonthwlishu}{\fontnamehwlishu}
+\newcommand{\fonthwlishu}[1]{\CJKfamily{fonthwlishu}#1}
+
+%定义中文字体大小
+\newcommand{\chaodatehao}{\fontsize{72pt}{\baselineskip}\selectfont}		%初号
+\newcommand{\datehao}{\fontsize{63pt}{\baselineskip}\selectfont}		%初号
+\newcommand{\tehao}{\fontsize{54pt}{\baselineskip}\selectfont}		%初号
+\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}		%初号
+\newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont}	%小初号
+\newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}		%一号
+\newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}		%二号
+\newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}	%小二号
+\newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont} 	%三号
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}  	%四号
+\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}	%小四号
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}	%五号
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}	%小五号
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}	%六号
+\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}	%七号
+
+
