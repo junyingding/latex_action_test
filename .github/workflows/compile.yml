@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  latex-job:
+    runs-on: ubuntu-latest
+    name: A job to Compile Latex file
+    steps:
+    - uses: actions/checkout@v1
+    - name: Compilation
+      uses: vinay0410/tectonic-action@master
+      env:
+          GITHUB_TOKEN: ${{ secrets.LATEX_COMPILE}}
+      with:
+        tex_path: '51-00014.tex'
+        push: 'yes'
